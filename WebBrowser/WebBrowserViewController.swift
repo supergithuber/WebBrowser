@@ -177,7 +177,12 @@ extension WebBrowserViewController {
         present(activityController, animated: true, completion: nil)
     }
     func onActionClose(sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        if self.navigationController?.viewControllers.first == self{
+            dismiss(animated: true, completion: nil)
+        }else{
+            self.navigationController?.popViewController(animated: true)
+        }
+        
     }
 }
 
